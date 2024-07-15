@@ -1,0 +1,26 @@
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+        ios_base::sync_with_stdio(false),cin.tie(NULL),cout.tie(NULL);
+        int row=matrix.size();
+        int col=matrix[0].size();
+        vector<pair<int,int>>temp;
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                if(matrix[i][j]==0){
+                    temp.push_back({i,j});
+                    }
+            }
+        }
+        for(auto i:temp){
+            for(int j=0;j<col;j++){
+            matrix[i.first][j]=0;
+            }
+            for(int j=0;j<row;j++){
+                matrix[j][i.second]=0;
+            }
+
+        }
+        
+    }
+};
